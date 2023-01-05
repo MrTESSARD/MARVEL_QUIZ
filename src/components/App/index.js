@@ -1,22 +1,33 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import '../../App.css';
 import Header from "../Header";
 import Landing from "../Landing";
 import Footer from "../Footer";
+import Welcome from '../Welcome';
+import Login from '../Login';
+import Signup from '../Signup/Index';
+import ErrorPage from '../ErrorPage';
+import { BrowserRouter, renderMatches } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      
+    <Router>
+      <Header />
+      <Routes>
+        <Route exact path='/' element={<Landing/>} />
+        <Route exact path='/welcome' element={<Welcome/>}/>
+        <Route exact path='/login' element={<Login/>} />
+        <Route exact path='/signup' element={<Signup/>} />
+        <Route path="*" element={<ErrorPage/>} />
+        
 
-<Header/>
+      </Routes>
 
+      <Footer />
 
-<Landing/>
-<Footer/>
-      
-    </div>
-  );
+    </Router>
+  )
 }
 
 export default App;
