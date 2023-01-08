@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Landing = () => {
     const refWolvering = useRef(null)
     const [btn, setBtn] = useState(false);
-    console.log(btn)
+    // console.log(btn)
 
     useEffect(() => {
         refWolvering.current.classList.add("startingImg")
