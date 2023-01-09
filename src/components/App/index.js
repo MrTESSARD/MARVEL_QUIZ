@@ -8,6 +8,7 @@ import Welcome from '../Welcome';
 import Login from '../Login';
 import Signup from '../Signup/Index';
 import ErrorPage from '../ErrorPage';
+import ForgetPasword from '../ForgetPassword';
 import { BrowserRouter, renderMatches } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/welcome' element={<Welcome/>}/>
         <Route exact path='/login' element={<Login/>} />
         <Route exact path='/signup' element={<Signup/>} />
+        <Route path="/forgetpassword" element={<ForgetPasword/>} />
         <Route path="*" element={<ErrorPage/>} />
         
 

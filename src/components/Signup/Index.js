@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../Firebase/firebaseConfig';
+import { auth, user  } from '../Firebase/firebaseConfig';
 import { Link, useNavigate } from 'react-router-dom'
+import { setDoc } from 'firebase/firestore';
 
 
 const Signup = (props) => {
@@ -16,6 +17,7 @@ const Signup = (props) => {
     }
     const [loginData, setLoginData] = useState(data);
     const [error, setError] = useState('');
+    console.log(error)
     const navigate = useNavigate();
 
     // console.log(navigate)
@@ -23,17 +25,24 @@ const Signup = (props) => {
     const handleChange = e => {
         setLoginData({ ...loginData, [e.target.id]: e.target.value })
     }
-
-
     const handleSubmit = e => {
         e.preventDefault()//blocker le refraichicement de la page 
-        const { email, password } = loginData
+        const { email, password, pseudo } = loginData
         createUserWithEmailAndPassword(auth, email, password)
-            .then(user => { //cas où on a reusi l'inscription
+        .then(authUser => { //cas où on a reusi l'inscription
+            return setDoc(user(authUser.user.uid), {
+                pseudo, 
+                email
+            })
+            
+
+            })
+            .then(() => { //cas où on a reusi l'inscription
                 setLoginData({ ...data })
                 navigate('/welcome')
 
-            })
+            }
+            )
             .catch(error => {
                 setError(error)
                 setLoginData({ ...data })

@@ -62,12 +62,13 @@ const Login = () => {
                                 <label htmlFor="password">Mot de passe</label>
 
                             </div>
-                            {btn ? <button>Connexion</button> : <button disabled>Connexion</button>}
+                            {/* {btn ? <button>Connexion</button> : <button disabled>Connexion</button>} */}
                             {<button disabled={btn ? false : true}>Connexion</button>}
                         </form>
                         <div className='linkContainer'>
                             <Link className='simpleLink' to="/signup">Nouveau sur Marvel Quiz ? Inscrivez-vous maintenant. </Link>
-
+                            <br/>
+                            <Link className='simpleLink' to="/forgetpassword">Mot de passe oublié? Récupéréz-le ici.</Link>
                         </div>
 
                     </div>
