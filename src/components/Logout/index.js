@@ -33,7 +33,7 @@ const Logout =()=> {
     const handleChange = event => {
         setChecked(event.target.checked)
     }
-    console.log(checked)
+    // console.log(checked)
     
     
   return (

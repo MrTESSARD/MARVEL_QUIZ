@@ -32,7 +32,7 @@ const ForgetPasword = () => {
 
 
         })
-        console.log(email);
+        // console.log(email);
     }
    const disabled =  email === "" 
   return (
