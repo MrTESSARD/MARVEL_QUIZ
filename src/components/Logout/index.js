@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react'
 import { signOut } from "firebase/auth";
 import { auth } from '../Firebase/firebaseConfig';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
+
+
 
 
 
@@ -44,8 +48,11 @@ const Logout =()=> {
             onChange={handleChange}
             type="checkbox"
             checked={checked} />
-            <span className='slider round'></span>
+            <span id="attributes-variant" className='slider round' data-tooltip-content="Déconnexion!" data-tooltip-variant="dark" ></span>
+            {/* <a id="attributes-variant" > ◕‿‿◕ </a> */}
+
         </label>
+<Tooltip anchorId="attributes-variant" place="left"/>
     </div>
   )
 }

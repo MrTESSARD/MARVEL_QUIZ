@@ -12,12 +12,12 @@ import { getFirestore, doc, setDoc } from "firebase/firestore"; //9
 
 // Your web app's Firebase configuration
 const config = {
-  apiKey: "AIzaSyC0F6i-hNu0EIOkoK3Z87oLe4r4fJtY1Ak",
-  authDomain: "marvel-quiz-6d041.firebaseapp.com",
-  projectId: "marvel-quiz-6d041",
-  storageBucket: "marvel-quiz-6d041.appspot.com",
-  messagingSenderId: "456851384002",
-  appId: "1:456851384002:web:b6be5e0a8fb8d7d76e3d5b"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // // inscription
