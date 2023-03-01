@@ -15,3 +15,16 @@ service cloud.firestore {
     }
   }
 }
+
+# Deploiement
+https://console.firebase.google.com/project/marvel-quiz-6d041/hosting/sites
+npm install -g firebase-tools
+firebase login ( tapper no pour la collecte CLI)
+npm run build
+firebase init
+
+# suite à ça deux fichiers sont crées :
+.firebaserc
+firebase.json
+
+firebase deploy
